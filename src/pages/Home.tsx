@@ -81,11 +81,11 @@ const TESTIMONIALS = [
     author: 'Zara M. — Abuja',
   },
   {
-    text: '"Maro\'s tote bags are a conversation starter every single time I carry mine to the market. Three of my friends have ordered one since."',
+    text: '"Maro\'s maxi dress is a conversation starter every single time I wear mine out. Three of my friends have ordered one since."',
     author: 'Adaeze O. — Lagos',
   },
   {
-    text: '"I wanted something unique for my birthday shoot and Maro delivered. The wrap is so beautiful people thought it was imported. Highly recommend."',
+    text: '"I wanted something unique for my birthday shoot and Maro delivered. The dress was so beautiful people thought it was imported. Highly recommend."',
     author: 'Kemi T. — Port Harcourt',
   },
 ]
@@ -133,7 +133,8 @@ export default function Home() {
           <img
             src="/images/products/ocean-breeze-cardigan.jpg"
             alt="A handmade Maro's Loop Lab granny-square cardigan"
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
             className="absolute inset-0 block h-full w-full object-cover brightness-[0.92]"
           />
           <div className="absolute bottom-10 left-8 max-w-[200px] rounded-xl bg-parch px-5 py-4">

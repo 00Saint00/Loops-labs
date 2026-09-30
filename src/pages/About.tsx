@@ -28,7 +28,8 @@ export default function About() {
           <img
             src="/images/products/heritage-maxi-dress.jpg"
             alt="Maro wearing one of her handmade granny-square maxi dresses"
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
             className="block h-full w-full object-cover brightness-90 max-md:max-h-[340px]"
           />
         </div>

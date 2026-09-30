@@ -25,7 +25,7 @@ export default function Nav({ variant = 'full', onMenuClick }: NavProps) {
       }`}
     >
       <NavLink to="/" className="font-display text-[1.15rem] text-walnut">
-        <img src="/brand/wordmark.png" alt="Maro's Loop Lab" className="block h-9 w-auto" />
+        <img src="/brand/wordmark.png" alt="Maro's Loop Lab" className="block h-9 w-auto max-md:h-6" />
       </NavLink>
 
       {variant === 'full' && (

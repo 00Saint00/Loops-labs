@@ -1,20 +1,6 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Playfair Display";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/playfair-display/400-latin-0.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Playfair Display";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/playfair-display/500-latin-0.woff2") format("woff2");
-}
-@font-face {
   font-family: "Jost";
   font-style: normal;
   font-weight: 300;
@@ -58,9 +44,6 @@
 }
 
 @theme {
-  /* The live site overrides the display font to the brand's custom
-     Godber face (see style.css's trailing :root re-declaration) —
-     Playfair Display is loaded but no longer used for --font-display. */
   --font-display: "Godber", sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-fun: "Bridemast", cursive;

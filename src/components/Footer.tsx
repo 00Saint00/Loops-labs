@@ -74,11 +74,6 @@ export default function Footer({ showEmail = false }: FooterProps) {
                 WhatsApp
               </a>
             </li>
-            <li>
-              <a href="#" className="text-[0.82rem] font-light text-parch/65 hover:text-parch">
-                TikTok
-              </a>
-            </li>
             {showEmail && (
               <li>
                 <a

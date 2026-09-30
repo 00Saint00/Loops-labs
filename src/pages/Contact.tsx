@@ -158,66 +158,86 @@ export default function Contact() {
 
               <div className="mb-4 grid grid-cols-2 gap-4 max-md:grid-cols-1">
                 <div className="flex flex-col">
-                  <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                  <label
+                    htmlFor="first-name"
+                    className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                  >
                     First name
                   </label>
                   <input
+                    id="first-name"
                     type="text"
                     placeholder="Amara"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                    className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                  <label
+                    htmlFor="last-name"
+                    className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                  >
                     Last name
                   </label>
                   <input
+                    id="last-name"
                     type="text"
                     placeholder="Okafor"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                    className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                   />
                 </div>
               </div>
 
               <div className="mb-4 flex flex-col">
-                <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                <label
+                  htmlFor="email"
+                  className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                >
                   Email address
                 </label>
                 <input
+                  id="email"
                   type="email"
                   placeholder="amara@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                  className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                 />
               </div>
 
               <div className="mb-4 flex flex-col">
-                <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                <label
+                  htmlFor="phone"
+                  className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                >
                   Phone / WhatsApp
                 </label>
                 <input
+                  id="phone"
                   type="text"
                   placeholder="+234 800 000 0000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                  className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                 />
               </div>
 
               {!isPrefilled && (
                 <div className="mb-4 flex flex-col">
-                  <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                  <label
+                    htmlFor="category"
+                    className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                  >
                     What are you looking for?
                   </label>
                   <select
+                    id="category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                    className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                   >
                     {CATEGORY_OPTIONS.map((opt) => (
                       <option key={opt.value} value={opt.value}>
@@ -232,37 +252,49 @@ export default function Contact() {
                 <>
                   <div className="my-5 h-px bg-linen" />
                   <div className="mb-4 flex flex-col">
-                    <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                    <label
+                      htmlFor="colour"
+                      className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                    >
                       Colour preference
                     </label>
                     <input
+                      id="colour"
                       type="text"
                       placeholder="e.g. keep it dusty rose, or try sage green…"
                       value={colour}
                       onChange={(e) => setColour(e.target.value)}
-                      className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                      className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                     />
                   </div>
                   <div className="mb-4 flex flex-col">
-                    <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                    <label
+                      htmlFor="size"
+                      className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                    >
                       Size or fit notes
                     </label>
                     <input
+                      id="size"
                       type="text"
                       placeholder={sizeHint}
                       value={size}
                       onChange={(e) => setSize(e.target.value)}
-                      className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose"
+                      className="rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                     />
                   </div>
                 </>
               )}
 
               <div className="mb-4 flex flex-col">
-                <label className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase">
+                <label
+                  htmlFor="notes"
+                  className="mb-2 text-[0.72rem] font-semibold tracking-[0.12em] text-muted uppercase"
+                >
                   {isPrefilled ? 'Anything else?' : 'Tell me more'}
                 </label>
                 <textarea
+                  id="notes"
                   rows={4}
                   placeholder={
                     isPrefilled
@@ -271,7 +303,7 @@ export default function Contact() {
                   }
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="min-h-[110px] resize-y rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] leading-[1.6] font-light text-walnut outline-none focus:border-rose"
+                  className="min-h-[110px] resize-y rounded-lg border-[1.5px] border-linen bg-off px-4 py-3 font-body text-[0.88rem] leading-[1.6] font-light text-walnut outline-none focus:border-rose focus:ring-2 focus:ring-rose/30"
                 />
               </div>
 
