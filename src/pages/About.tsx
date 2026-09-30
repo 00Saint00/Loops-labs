@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Reveal from '../components/Reveal'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 const VALUES = [
@@ -15,7 +16,7 @@ const TIMELINE = [
   { year: '2017', title: 'Back to the hook', desc: 'Rediscovered crochet as a creative outlet during a particularly busy year in Lagos. Made my first adult-sized hat and gifted it to a coworker.' },
   { year: '2019', title: 'First paid order', desc: "A friend's colleague saw a bag I made and asked if she could buy one. That was the moment I realised people might actually pay for this." },
   { year: '2021', title: "Maro's Loop Lab is born", desc: 'Launched the Instagram page, built a proper process for custom orders, and started shipping outside Lagos for the first time.' },
-  { year: 'Today', title: '200+ pieces and counting', desc: "Customers from Lagos to London. Every single piece still made by my own two hands — and I wouldn't have it any other way." },
+  { year: 'Today', title: '80+ pieces and counting', desc: "Customers from Lagos to London. Every single piece still made by my own two hands — and I wouldn't have it any other way." },
 ]
 
 export default function About() {
@@ -47,33 +48,43 @@ export default function About() {
             slow, thoughtful creation in a world of mass production.
           </p>
           <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
-            It started beside my grandmother in Enugu, watching her hands turn yarn into
-            something that felt like magic. She never used a pattern. She just knew.
+            My journey with crochet began back in secondary school, when I first discovered the
+            craft and fell in love with creating things with my own hands. Life took me in
+            different directions for years, and my hooks got put aside — but the love for it
+            never truly left.
           </p>
           <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
-            Today, from earrings to hats and fully custom designs, each piece is an experiment in
-            creativity — playful, yet rooted in timeless skill.{' '}
+            In 2023, my cousin asked if I still knew how to crochet. That simple question brought
+            back a part of me I'd almost forgotten. I picked up a hook again, and with it came all
+            the passion, creativity and love for the craft I'd once known.
+          </p>
+          <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
+            What started as something I learned as a teenager has become something much deeper —{' '}
             <strong className="font-medium text-walnut">
-              Maro's Loop Lab is more than a brand; it's a studio
-            </strong>{' '}
-            where the past meets the present to craft accessories as unique as each individual.
+              a creative journey that's grown into the business and dream I'm building today
+            </strong>
+            .
           </p>
           <div className="mt-6 font-display text-[1.4rem] text-rose italic">— Maro</div>
         </div>
       </section>
 
       <section className="bg-off px-8 py-20">
-        <div className="pt-0 pb-10 text-center">
+        <Reveal className="pt-0 pb-10 text-center">
           <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             What I believe in
           </div>
           <div className="font-display text-[2.2rem] text-walnut">
             The <em className="font-fun text-coral not-italic">Loop Lab</em> way
           </div>
-        </div>
+        </Reveal>
         <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-3 gap-8 max-md:grid-cols-1">
-          {VALUES.map((v) => (
-            <div key={v.title} className="rounded-xl border border-linen bg-parch p-8 text-center">
+          {VALUES.map((v, i) => (
+            <Reveal
+              key={v.title}
+              delay={i * 80}
+              className="rounded-xl border border-linen bg-parch p-8 text-center"
+            >
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-rose-lt text-[1.3rem]">
                 {v.icon}
               </div>
@@ -81,23 +92,23 @@ export default function About() {
                 {v.title}
               </div>
               <div className="text-[0.83rem] leading-[1.7] font-light text-muted">{v.desc}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-[700px] px-8 pt-16 pb-8">
-        <div className="pb-10 text-left">
+        <Reveal className="pb-10 text-left">
           <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             The journey
           </div>
           <div className="font-display text-[2.2rem] text-walnut">
             How we <em className="font-fun text-coral not-italic">got here</em>
           </div>
-        </div>
+        </Reveal>
         <div className="mx-auto max-w-[700px] py-8">
           {TIMELINE.map((item, i) => (
-            <div key={item.year} className="relative mb-10 flex gap-8 last:mb-0">
+            <Reveal key={item.year} delay={i * 80} className="relative mb-10 flex gap-8 last:mb-0">
               {i < TIMELINE.length - 1 && (
                 <div className="absolute top-[42px] bottom-[-2.5rem] left-[19px] w-px bg-linen" />
               )}
@@ -115,12 +126,12 @@ export default function About() {
                   {item.desc}
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-[color-mix(in_srgb,var(--color-rose-lt)_38%,var(--color-parch)_62%)] px-8 py-20 text-center">
+      <Reveal className="bg-[color-mix(in_srgb,var(--color-rose-lt)_38%,var(--color-parch)_62%)] px-8 py-20 text-center">
         <h2 className="mb-4 font-display text-[2.2rem] text-walnut">
           Want to own a piece of the loop?
         </h2>
@@ -142,7 +153,7 @@ export default function About() {
             Get in touch
           </Link>
         </div>
-      </section>
+      </Reveal>
 
       <Footer />
     </>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Reveal from '../components/Reveal'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 function CountUp({ end, duration = 1400 }: { end: number; duration?: number }) {
@@ -148,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="grid grid-cols-3 border-y border-linen">
+      <Reveal className="grid grid-cols-3 border-y border-linen">
         {[
           ['80+', 'Pieces made'],
           ['100%', 'Handmade, always'],
@@ -164,52 +165,55 @@ export default function Home() {
             </div>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <section>
-        <div className="px-8 pt-16 pb-10 text-center">
+        <Reveal className="px-8 pt-16 pb-10 text-center">
           <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             Fresh from the loop
           </div>
           <div className="font-display text-[2.2rem] text-walnut">
             Recent <em className="font-fun text-coral not-italic">favourites</em>
           </div>
-        </div>
+        </Reveal>
         <div className="mx-auto grid max-w-[1100px] grid-cols-[2fr_1fr_1fr] grid-rows-2 gap-3 px-8 pb-16 max-md:grid-cols-2">
-          {FEATURED.map((item) => (
-            <Link
-              key={item.title}
-              to="/gallery"
-              className={`group relative block overflow-hidden rounded-lg ${item.tall ? 'row-span-2' : ''}`}
-            >
-              <img
-                src={item.img}
-                alt={`${item.title} — ${item.tag}`}
-                loading="lazy"
-                className={`block w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] ${item.tall ? 'h-[520px]' : 'h-[250px]'}`}
-              />
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-walnut/65 to-transparent to-50% opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="absolute right-0 bottom-0 left-0 translate-y-1 p-[1.1rem] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <h4 className="font-display text-[0.95rem] text-parch">{item.title}</h4>
-                <p className="mt-0.5 text-[0.7rem] tracking-[0.06em] text-linen uppercase">
-                  {item.tag}
-                </p>
-              </div>
-            </Link>
+          {FEATURED.map((item, i) => (
+            <Reveal key={item.title} delay={i * 80} className={item.tall ? 'row-span-2' : ''}>
+              <Link
+                to="/gallery"
+                className="group relative block overflow-hidden rounded-lg"
+              >
+                <img
+                  src={item.img}
+                  alt={`${item.title} — ${item.tag}`}
+                  loading="lazy"
+                  className={`block w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] ${item.tall ? 'h-[520px]' : 'h-[250px]'}`}
+                />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-walnut/65 to-transparent to-50% opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute right-0 bottom-0 left-0 translate-y-1 p-[1.1rem] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <h4 className="font-display text-[0.95rem] text-parch">{item.title}</h4>
+                  <p className="mt-0.5 text-[0.7rem] tracking-[0.06em] text-linen uppercase">
+                    {item.tag}
+                  </p>
+                </div>
+              </Link>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="bg-walnut px-8 py-20 text-center">
-        <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose-lt/80 uppercase">
-          How it works
-        </div>
-        <div className="font-display text-[2.2rem] text-parch">
-          From request to <em className="font-fun text-rose-lt not-italic">your door</em>
-        </div>
+        <Reveal>
+          <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose-lt/80 uppercase">
+            How it works
+          </div>
+          <div className="font-display text-[2.2rem] text-parch">
+            From request to <em className="font-fun text-rose-lt not-italic">your door</em>
+          </div>
+        </Reveal>
         <div className="relative mx-auto mt-12 flex max-w-[800px] justify-center max-md:mt-10 max-md:flex-col max-md:gap-10">
           {PROCESS_STEPS.map((step, i) => (
-            <div key={step.title} className="relative flex-1 px-6">
+            <Reveal key={step.title} delay={i * 80} className="relative flex-1 px-6">
               {i < PROCESS_STEPS.length - 1 && (
                 <div className="absolute top-5 left-1/2 h-px w-full bg-rose-lt/30 max-md:hidden" />
               )}
@@ -222,23 +226,27 @@ export default function Home() {
               <div className="text-[0.82rem] leading-[1.6] font-light text-parch/82">
                 {step.desc}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="bg-off px-8 py-20">
-        <div className="pt-0 pb-10 text-center">
+        <Reveal className="pt-0 pb-10 text-center">
           <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             What customers say
           </div>
           <div className="font-display text-[2.2rem] text-walnut">
             Worn &amp; <em className="font-fun text-coral not-italic">loved</em>
           </div>
-        </div>
+        </Reveal>
         <div className="mx-auto mt-10 grid max-w-[1000px] grid-cols-3 gap-6 max-md:grid-cols-1">
-          {TESTIMONIALS.map((t) => (
-            <div key={t.author} className="rounded-xl border border-linen bg-parch p-7">
+          {TESTIMONIALS.map((t, i) => (
+            <Reveal
+              key={t.author}
+              delay={i * 80}
+              className="rounded-xl border border-linen bg-parch p-7"
+            >
               <div className="mb-3 tracking-[2px] text-rose">★★★★★</div>
               <div className="mb-5 text-[0.88rem] leading-[1.75] font-light text-muted italic">
                 {t.text}
@@ -246,12 +254,12 @@ export default function Home() {
               <div className="text-[0.78rem] font-semibold tracking-[0.06em] text-walnut uppercase">
                 {t.author}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-[color-mix(in_srgb,var(--color-rose-lt)_38%,var(--color-parch)_62%)] px-8 py-20 text-center">
+      <Reveal className="bg-[color-mix(in_srgb,var(--color-rose-lt)_38%,var(--color-parch)_62%)] px-8 py-20 text-center">
         <h2 className="mb-4 font-display text-[2.2rem] text-walnut">Something in mind?</h2>
         <p className="mx-auto mb-8 max-w-[420px] leading-[1.7] font-light text-muted">
           Every piece is made to order — bring your colours, your vision, your occasion. Maro
@@ -263,7 +271,7 @@ export default function Home() {
         >
           Start your request
         </Link>
-      </section>
+      </Reveal>
 
       <Footer showEmail />
     </>

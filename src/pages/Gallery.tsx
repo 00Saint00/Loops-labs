@@ -249,6 +249,18 @@ export default function Gallery() {
     }
   }, [selected])
 
+  const [renderedItem, setRenderedItem] = useState<GalleryItem | null>(null)
+
+  useEffect(() => {
+    if (selected) {
+      setRenderedItem(selected)
+    } else if (renderedItem) {
+      const timeout = setTimeout(() => setRenderedItem(null), 200)
+      return () => clearTimeout(timeout)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected])
+
   const openItem = (item: GalleryItem) => {
     if (dragMoved.current) return
     setSelected(item)
@@ -328,16 +340,20 @@ export default function Gallery() {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label={selected?.title}
-        className={`fixed inset-0 z-[500] items-center justify-center bg-[rgba(30,18,10,0.88)] p-6 ${
-          selected ? 'flex' : 'hidden'
-        }`}
+        aria-label={renderedItem?.title}
+        className={`fixed inset-0 z-[500] flex items-center justify-center p-6 transition-colors duration-200 ${
+          selected ? 'bg-[rgba(30,18,10,0.88)]' : 'pointer-events-none bg-[rgba(30,18,10,0)]'
+        } ${renderedItem ? '' : 'hidden'}`}
         onClick={(e) => {
           if (e.target === e.currentTarget) setSelected(null)
         }}
       >
-        {selected && (
-          <div className="relative w-full max-w-[480px]">
+        {renderedItem && (
+          <div
+            className={`relative w-full max-w-[480px] transition-all duration-200 ease-out ${
+              selected ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+            }`}
+          >
             <div className="flex max-h-[90vh] w-full max-w-[480px] flex-col overflow-y-auto rounded-2xl bg-parch">
               <button
                 ref={modalCloseRef}
@@ -350,24 +366,24 @@ export default function Gallery() {
               </button>
               <div className="flex max-h-[55vh] w-full items-center justify-center rounded-t-2xl bg-off">
                 <img
-                  src={selected.img}
-                  alt={selected.title}
+                  src={renderedItem.img}
+                  alt={renderedItem.title}
                   className="max-h-[55vh] w-auto max-w-full object-contain"
                 />
               </div>
               <div className="px-8 py-7">
                 <div className="mb-1.5 text-[0.7rem] font-semibold tracking-[0.15em] text-rose uppercase">
-                  {selected.tag}
+                  {renderedItem.tag}
                 </div>
                 <div className="mb-2.5 font-display text-[1.4rem] text-walnut">
-                  {selected.title}
+                  {renderedItem.title}
                 </div>
                 <div className="mb-5 text-[0.88rem] leading-[1.75] font-light text-muted">
-                  {selected.desc}
+                  {renderedItem.desc}
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <Link
-                    to={`/contact?piece=${encodeURIComponent(selected.title)}&tag=${encodeURIComponent(selected.tag)}&cat=${encodeURIComponent(selected.cat)}&img=${encodeURIComponent(selected.img)}`}
+                    to={`/contact?piece=${encodeURIComponent(renderedItem.title)}&tag=${encodeURIComponent(renderedItem.tag)}&cat=${encodeURIComponent(renderedItem.cat)}&img=${encodeURIComponent(renderedItem.img)}`}
                     className="inline-block rounded-full bg-rose px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
                   >
                     Request this piece

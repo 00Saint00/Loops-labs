@@ -112,7 +112,7 @@ export default function Contact() {
                 Based in
               </div>
               <div className="text-[0.88rem] leading-[1.5] font-light text-linen/85">
-                Surulere, Lagos, Nigeria
+                Ikeja, Lagos, Nigeria
                 <br />
                 <span className="text-[0.75rem] opacity-60">Nationwide delivery available</span>
               </div>
