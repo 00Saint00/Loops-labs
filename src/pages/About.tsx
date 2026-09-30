@@ -13,10 +13,10 @@ const VALUES = [
 ]
 
 const TIMELINE = [
-  { year: '2017', title: 'Back to the hook', desc: 'Rediscovered crochet as a creative outlet during a particularly busy year in Lagos. Made my first adult-sized hat and gifted it to a coworker.' },
-  { year: '2019', title: 'First paid order', desc: "A friend's colleague saw a bag I made and asked if she could buy one. That was the moment I realised people might actually pay for this." },
-  { year: '2021', title: "Maro's Loop Lab is born", desc: 'Launched the Instagram page, built a proper process for custom orders, and started shipping outside Lagos for the first time.' },
-  { year: 'Today', title: '80+ pieces and counting', desc: "Customers from Lagos to London. Every single piece still made by my own two hands — and I wouldn't have it any other way." },
+  { year: '2023', title: 'Back to the hook', desc: 'Rediscovered crochet as a creative outlet during a particularly challenging period. Made my first adult-size beanie, a bikini piece, and various tops and sweaters.' },
+  { year: '2024', title: 'First paid order', desc: 'A friend from Twitter had seen some of the pieces I\'d made and asked if he could buy one. That was the moment I realised I could actually turn this passion into a business — and enjoy what I do.' },
+  { year: '2025', title: "Maro's Loop Lab was born", desc: 'Launched the Instagram and TikTok pages, took on custom orders, and started shipping interstate for the first time.' },
+  { year: 'Today', title: '50+ pieces and counting', desc: "Customers from all over Nigeria. Every single piece still made by my own two hands — and I wouldn't have it any other way." },
 ]
 
 export default function About() {

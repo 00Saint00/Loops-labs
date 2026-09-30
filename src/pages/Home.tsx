@@ -151,7 +151,7 @@ export default function Home() {
 
       <Reveal className="grid grid-cols-3 border-y border-linen">
         {[
-          ['80+', 'Pieces made'],
+          ['50+', 'Pieces made'],
           ['100%', 'Handmade, always'],
           ['3+', 'Years of craft'],
         ].map(([num, label], i) => (
