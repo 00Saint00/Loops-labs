@@ -28,7 +28,7 @@ export default function About() {
         <div className="overflow-hidden bg-rose-lt">
           <img
             src="/images/products/heritage-maxi-dress.jpg"
-            alt="Maro wearing one of her handmade granny-square maxi dresses"
+            alt="Maro wearing one of her handmade granny-square cardigans"
             loading="eager"
             fetchPriority="high"
             className="block h-full w-full object-cover brightness-90 max-md:max-h-[340px]"
