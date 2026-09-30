@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/playfair-display/400-latin-0.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/playfair-display/500-latin-0.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/jost/300-latin-0.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/jost/400-latin-0.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/jost/500-latin-0.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/jost/600-latin-0.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Godber";
+  src: url("/fonts/custom/godber.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bridemast";
+  src: url("/fonts/custom/bridemast.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* The live site overrides the display font to the brand's custom
+     Godber face (see style.css's trailing :root re-declaration) —
+     Playfair Display is loaded but no longer used for --font-display. */
+  --font-display: "Godber", sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-fun: "Bridemast", cursive;
+
+  --color-parch: hsla(42, 100%, 98.04%, 1);
+  --color-rose: hsla(325.04, 45.45%, 49.61%, 1);
+  --color-rose-deep: hsla(324.85, 47.37%, 40.98%, 1);
+  --color-rose-lt: hsla(28.38, 98.67%, 70.59%, 1);
+  --color-sage-lt: hsla(32.53, 100%, 83.73%, 1);
+  --color-linen: hsla(35.22, 71.88%, 87.45%, 1);
+  --color-walnut: hsla(325.33, 51.72%, 17.06%, 1);
+  --color-muted: hsla(321.18, 21.16%, 47.25%, 1);
+  --color-off: hsla(0, 0%, 100%, 1);
+  --color-coral: hsla(351.85, 92.05%, 65.49%, 1);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-parch);
+  color: var(--color-walnut);
+}
