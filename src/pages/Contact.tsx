@@ -310,7 +310,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="inline-block rounded-full bg-rose px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
+                className="inline-block rounded-full bg-rose px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
               >
                 Send my request
               </button>
@@ -327,7 +327,7 @@ export default function Contact() {
               </p>
               <Link
                 to="/gallery"
-                className="mt-6 inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
+                className="mt-6 inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
               >
                 Browse the gallery while you wait
               </Link>

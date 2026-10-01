@@ -24,41 +24,41 @@ export default function About() {
 
   return (
     <>
-      <section className="grid min-h-[480px] grid-cols-2 max-md:grid-cols-1">
-        <div className="overflow-hidden bg-rose-lt">
+      <section className="grid grid-cols-2 items-start max-md:grid-cols-1">
+        <div className="relative aspect-[4/5] overflow-hidden bg-rose-lt md:sticky md:top-14 md:aspect-auto md:h-[calc(100svh-3.5rem)] md:max-h-[880px] md:min-h-[560px]">
           <img
             src="/images/products/heritage-maxi-dress.jpg"
             alt="Maro wearing one of her handmade granny-square cardigans"
             loading="eager"
             fetchPriority="high"
-            className="block h-full w-full object-cover brightness-90 max-md:max-h-[340px]"
+            className="absolute inset-0 block h-full w-full object-cover object-[50%_30%] brightness-90"
           />
         </div>
-        <div className="flex flex-col justify-center px-16 py-20 max-md:px-8 max-md:py-12">
+        <div className="flex flex-col justify-center px-16 py-16 max-md:px-8 max-md:py-12 md:min-h-[min(calc(100svh-3.5rem),880px)]">
           <div className="mb-4 text-left text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             The woman behind the loop
           </div>
           <h1 className="mb-6 font-display text-[2.8rem] leading-[1.2] text-walnut">
             Hi, I'm <em className="font-fun text-coral not-italic">Maro.</em>
           </h1>
-          <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
+          <p className="mb-4 max-w-[520px] text-base leading-[1.85] text-muted">
             At Maro's Loop Lab, we celebrate the art of bespoke craftsmanship — one-of-a-kind
             crochet pieces tailored to reflect <strong className="font-medium text-walnut">your</strong>{' '}
             individuality. Inspired by the legacy of specialized artisans, we honor the beauty of
             slow, thoughtful creation in a world of mass production.
           </p>
-          <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
+          <p className="mb-4 max-w-[520px] text-base leading-[1.85] text-muted">
             My journey with crochet began back in secondary school, when I first discovered the
             craft and fell in love with creating things with my own hands. Life took me in
             different directions for years, and my hooks got put aside — but the love for it
             never truly left.
           </p>
-          <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
+          <p className="mb-4 max-w-[520px] text-base leading-[1.85] text-muted">
             In 2023, my cousin asked if I still knew how to crochet. That simple question brought
             back a part of me I'd almost forgotten. I picked up a hook again, and with it came all
             the passion, creativity and love for the craft I'd once known.
           </p>
-          <p className="mb-4 text-[0.92rem] leading-[1.85] font-light text-muted">
+          <p className="mb-4 max-w-[520px] text-base leading-[1.85] text-muted">
             What started as something I learned as a teenager has become something much deeper —{' '}
             <strong className="font-medium text-walnut">
               a creative journey that's grown into the business and dream I'm building today
@@ -74,9 +74,9 @@ export default function About() {
           <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             What I believe in
           </div>
-          <div className="font-display text-[2.2rem] text-walnut">
+          <h2 className="font-display text-[2.2rem] text-walnut">
             The <em className="font-fun text-coral not-italic">Loop Lab</em> way
-          </div>
+          </h2>
         </Reveal>
         <div className="mx-auto mt-12 grid max-w-[900px] grid-cols-3 gap-8 max-md:grid-cols-1">
           {VALUES.map((v, i) => (
@@ -85,13 +85,13 @@ export default function About() {
               delay={i * 80}
               className="rounded-xl border border-linen bg-parch p-8 text-center"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-rose-lt text-[1.3rem]">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-rose-lt text-[1.3rem]" aria-hidden="true">
                 {v.icon}
               </div>
-              <div className="mb-2 font-display text-[1.05rem] font-medium text-walnut">
+              <h3 className="mb-2 font-display text-[1.05rem] font-medium text-walnut">
                 {v.title}
-              </div>
-              <div className="text-[0.83rem] leading-[1.7] font-light text-muted">{v.desc}</div>
+              </h3>
+              <div className="text-[0.9rem] leading-[1.7] text-muted">{v.desc}</div>
             </Reveal>
           ))}
         </div>
@@ -102,9 +102,9 @@ export default function About() {
           <div className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-rose uppercase">
             The journey
           </div>
-          <div className="font-display text-[2.2rem] text-walnut">
+          <h2 className="font-display text-[2.2rem] text-walnut">
             How we <em className="font-fun text-coral not-italic">got here</em>
-          </div>
+          </h2>
         </Reveal>
         <div className="mx-auto max-w-[700px] py-8">
           {TIMELINE.map((item, i) => (
@@ -119,10 +119,10 @@ export default function About() {
                 <div className="mb-1 text-[0.7rem] font-semibold tracking-[0.15em] text-rose uppercase">
                   {item.year}
                 </div>
-                <div className="mb-1 font-display text-[1.1rem] font-medium text-walnut">
+                <h3 className="mb-1 font-display text-[1.1rem] font-medium text-walnut">
                   {item.title}
-                </div>
-                <div className="text-[0.85rem] leading-[1.7] font-light text-muted">
+                </h3>
+                <div className="text-[0.92rem] leading-[1.7] text-muted">
                   {item.desc}
                 </div>
               </div>
@@ -135,20 +135,20 @@ export default function About() {
         <h2 className="mb-4 font-display text-[2.2rem] text-walnut">
           Want to own a piece of the loop?
         </h2>
-        <p className="mx-auto mb-8 max-w-[420px] leading-[1.7] font-light text-muted">
+        <p className="mx-auto mb-8 max-w-[440px] text-[1.05rem] leading-[1.7] text-muted">
           Browse the gallery, find something you love, and send me a message. I'd love to make
           something for you.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/gallery"
-            className="inline-block rounded-full bg-rose px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
+            className="inline-block rounded-full bg-rose px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
           >
             See the collection
           </Link>
           <Link
             to="/contact"
-            className="inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
+            className="inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
           >
             Get in touch
           </Link>

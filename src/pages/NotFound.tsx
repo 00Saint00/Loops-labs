@@ -23,13 +23,13 @@ export default function NotFound() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             to="/"
-            className="inline-block rounded-full bg-rose px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
+            className="inline-block rounded-full bg-rose px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
           >
             Back to home
           </Link>
           <Link
             to="/gallery"
-            className="inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
+            className="inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
           >
             Browse the collection
           </Link>

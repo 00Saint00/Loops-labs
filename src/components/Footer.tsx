@@ -17,9 +17,9 @@ export default function Footer({ showEmail = false }: FooterProps) {
           </div>
         </div>
         <div>
-          <h5 className="mb-4 text-[0.72rem] font-semibold tracking-[0.15em] text-rose-lt/55 uppercase">
+          <h2 className="mb-4 text-[0.72rem] font-semibold tracking-[0.15em] text-rose-lt/55 uppercase">
             Pages
-          </h5>
+          </h2>
           <ul className="space-y-[0.6rem]">
             <li>
               <a href="/" className="text-[0.82rem] font-light text-parch/65 hover:text-parch">
@@ -50,9 +50,9 @@ export default function Footer({ showEmail = false }: FooterProps) {
           </ul>
         </div>
         <div>
-          <h5 className="mb-4 text-[0.72rem] font-semibold tracking-[0.15em] text-rose-lt/55 uppercase">
+          <h2 className="mb-4 text-[0.72rem] font-semibold tracking-[0.15em] text-rose-lt/55 uppercase">
             Connect
-          </h5>
+          </h2>
           <ul className="space-y-[0.6rem]">
             <li>
               <a
@@ -88,7 +88,7 @@ export default function Footer({ showEmail = false }: FooterProps) {
         </div>
       </footer>
       <div className="border-t border-rose-lt/18 bg-walnut px-10 py-4 text-center text-[0.72rem] tracking-[0.06em] text-parch/45">
-        © 2025 Maro's Loop Lab · A story in every loop · Made with love in Lagos
+        © {new Date().getFullYear()} Maro's Loop Lab · A story in every loop · Made with love in Lagos
       </div>
     </>
   )

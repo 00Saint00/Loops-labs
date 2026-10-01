@@ -12,21 +12,24 @@ interface GalleryItem {
   tag: string
   desc: string
   img: string
+  /** Natural pixel size of img, so the detail view reserves space before it loads */
+  iw: number
+  ih: number
 }
 
 const ITEMS: GalleryItem[] = [
-  { x: 180, y: 180, w: 180, h: 240, cat: 'dresses', title: 'Ivory Halter Dress', tag: 'Dresses', desc: 'Open-stitch crochet mini dress in undyed cotton, tied at the bust with a self-fabric bow. Fully lined, made to measure.', img: '/images/products/ivory-halter-dress.jpg' },
-  { x: 750, y: 120, w: 192, h: 252, cat: 'tops', title: 'Ocean Breeze Cardigan', tag: 'Tops & Cardigans', desc: 'Granny-square cardigan in shades of blue, white and black. Open front, kimono sleeves — a statement layer for cooler evenings.', img: '/images/products/ocean-breeze-cardigan.jpg' },
-  { x: 1350, y: 300, w: 228, h: 300, cat: 'dresses', title: 'Heritage Maxi Dress', tag: 'Dresses', desc: 'Floor-length granny-square dress in cream, blush and berry. Every square hand-joined — no two dresses ever match exactly.', img: '/images/products/heritage-maxi-dress-studio.jpg' },
-  { x: 1080, y: 690, w: 180, h: 240, cat: 'dresses', title: 'Violet Fringe Dress', tag: 'Dresses', desc: 'Fitted knit dress in deep violet with a hand-knotted fringe hem. Sleeveless, lined, made to order.', img: '/images/products/violet-fringe-dress.jpg' },
-  { x: 220, y: 1125, w: 192, h: 252, cat: 'tops', title: 'Violet Bloom Cardigan', tag: 'Tops & Cardigans', desc: 'Granny-square cardigan in violet, lilac and cream. Relaxed kimono fit, endlessly cosy.', img: '/images/products/violet-bloom-cardigan.jpg' },
-  { x: 1560, y: 930, w: 168, h: 240, cat: 'tops', title: 'Sunset Polo', tag: 'Tops & Cardigans', desc: 'Open-stitch crochet polo in hot pink. Breathable, relaxed fit — as easy over swimwear as it is with tailored trousers.', img: '/images/products/sunset-polo.jpg' },
-  { x: 810, y: 1080, w: 192, h: 252, cat: 'tops', title: 'Cherry Blossom Cardigan', tag: 'Tops & Cardigans', desc: 'Granny-square cardigan in cherry red, pink and cream. Dramatic bell sleeves, ribbed cuffs, endlessly photogenic.', img: '/images/products/cherry-blossom-cardigan.jpg' },
-  { x: 1950, y: 60, w: 190, h: 252, cat: 'tops', title: 'Colorblock Crew Sweater', tag: 'Tops & Cardigans', desc: 'Chunky knit crewneck in black with blue and cream colour-block panels. Ribbed cuffs and hem, unisex fit.', img: '/images/products/colorblock-sweater.jpg' },
-  { x: 2304, y: 500, w: 180, h: 240, cat: 'hats', title: 'Ivory Trim Sun Hat', tag: 'Hats', desc: 'Open-stitch crochet sun hat in undyed cotton with a blue and brown trim border. Wide brim, breathable weave.', img: '/images/products/ivory-sun-hat.jpg' },
-  { x: 525, y: 567, w: 220, h: 222, cat: 'swim', title: 'Violet Bloom Bikini', tag: 'Swimwear', desc: 'Two-piece crochet bikini in violet with hand-crocheted flower appliqués. Adjustable ties, fully lined.', img: '/images/products/violet-bikini-set.jpg' },
-  { x: 1950, y: 950, w: 190, h: 280, cat: 'tops', title: 'Ivory Stripe Polo Co-ord', tag: 'Tops & Cardigans', desc: 'Open-stitch button-front polo and matching shorts in ivory with a contrast stripe. Sold as a set.', img: '/images/products/ivory-stripe-polo-set.jpg' },
-  { x: 2350, y: 1100, w: 180, h: 240, cat: 'hats', title: 'Violet Leaf Bucket Hat', tag: 'Hats', desc: 'Crochet bucket hat in deep violet with a hand-crocheted leaf appliqué. Ruffled brim, one size.', img: '/images/products/violet-leaf-bucket-hat.jpg' },
+  { x: 180, y: 180, w: 180, h: 240, cat: 'dresses', title: 'Ivory Halter Dress', tag: 'Dresses', desc: 'Open-stitch crochet mini dress in undyed cotton, tied at the bust with a self-fabric bow. Fully lined, made to measure.', img: '/images/products/ivory-halter-dress.jpg', iw: 960, ih: 1280 },
+  { x: 750, y: 120, w: 192, h: 252, cat: 'tops', title: 'Ocean Breeze Cardigan', tag: 'Tops & Cardigans', desc: 'Granny-square cardigan in shades of blue, white and black. Open front, kimono sleeves — a statement layer for cooler evenings.', img: '/images/products/ocean-breeze-cardigan.jpg', iw: 960, ih: 1280 },
+  { x: 1350, y: 300, w: 228, h: 300, cat: 'dresses', title: 'Heritage Maxi Dress', tag: 'Dresses', desc: 'Floor-length granny-square dress in cream, blush and berry. Every square hand-joined — no two dresses ever match exactly.', img: '/images/products/heritage-maxi-dress-studio.jpg', iw: 880, ih: 1168 },
+  { x: 1080, y: 690, w: 180, h: 240, cat: 'dresses', title: 'Violet Fringe Dress', tag: 'Dresses', desc: 'Fitted knit dress in deep violet with a hand-knotted fringe hem. Sleeveless, lined, made to order.', img: '/images/products/violet-fringe-dress.jpg', iw: 800, ih: 1067 },
+  { x: 220, y: 1125, w: 192, h: 252, cat: 'tops', title: 'Violet Bloom Cardigan', tag: 'Tops & Cardigans', desc: 'Granny-square cardigan in violet, lilac and cream. Relaxed kimono fit, endlessly cosy.', img: '/images/products/violet-bloom-cardigan.jpg', iw: 880, ih: 1168 },
+  { x: 1560, y: 930, w: 168, h: 240, cat: 'tops', title: 'Sunset Polo', tag: 'Tops & Cardigans', desc: 'Open-stitch crochet polo in hot pink. Breathable, relaxed fit — as easy over swimwear as it is with tailored trousers.', img: '/images/products/sunset-polo.jpg', iw: 624, ih: 1664 },
+  { x: 810, y: 1080, w: 192, h: 252, cat: 'tops', title: 'Cherry Blossom Cardigan', tag: 'Tops & Cardigans', desc: 'Granny-square cardigan in cherry red, pink and cream. Dramatic bell sleeves, ribbed cuffs, endlessly photogenic.', img: '/images/products/cherry-blossom-cardigan.jpg', iw: 880, ih: 1168 },
+  { x: 1950, y: 60, w: 190, h: 252, cat: 'tops', title: 'Colorblock Crew Sweater', tag: 'Tops & Cardigans', desc: 'Chunky knit crewneck in black with blue and cream colour-block panels. Ribbed cuffs and hem, unisex fit.', img: '/images/products/colorblock-sweater.jpg', iw: 864, ih: 1152 },
+  { x: 2304, y: 500, w: 180, h: 240, cat: 'hats', title: 'Ivory Trim Sun Hat', tag: 'Hats', desc: 'Open-stitch crochet sun hat in undyed cotton with a blue and brown trim border. Wide brim, breathable weave.', img: '/images/products/ivory-sun-hat.jpg', iw: 800, ih: 1062 },
+  { x: 525, y: 567, w: 220, h: 222, cat: 'swim', title: 'Violet Bloom Bikini', tag: 'Swimwear', desc: 'Two-piece crochet bikini in violet with hand-crocheted flower appliqués. Adjustable ties, fully lined.', img: '/images/products/violet-bikini-set.jpg', iw: 900, ih: 723 },
+  { x: 1950, y: 950, w: 190, h: 280, cat: 'tops', title: 'Ivory Stripe Polo Co-ord', tag: 'Tops & Cardigans', desc: 'Open-stitch button-front polo and matching shorts in ivory with a contrast stripe. Sold as a set.', img: '/images/products/ivory-stripe-polo-set.jpg', iw: 880, ih: 1168 },
+  { x: 2350, y: 1100, w: 180, h: 240, cat: 'hats', title: 'Violet Leaf Bucket Hat', tag: 'Hats', desc: 'Crochet bucket hat in deep violet with a hand-crocheted leaf appliqué. Ruffled brim, one size.', img: '/images/products/violet-leaf-bucket-hat.jpg', iw: 800, ih: 1062 },
 ]
 
 // Reference size the ITEMS coordinates above were designed at. The actual
@@ -261,6 +264,51 @@ export default function Gallery() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected])
 
+  // Keyboard users Tab through pieces that may sit off-screen on the canvas.
+  // When a piece gets keyboard focus, glide the canvas so it's in view.
+  const panToItem = (i: number) => {
+    const stage = stageRef.current
+    const plane = planeRef.current
+    const el = itemRefs.current[i]
+    if (!stage || !plane || !el) return
+    // The browser scrolls the clipped stage to reveal a focused child, which
+    // would fight our transform-based panning. Undo that first.
+    stage.scrollLeft = 0
+    stage.scrollTop = 0
+    if (!el.matches(':focus-visible')) return
+    const item = ITEMS[i]
+    const scale = scaleRef.current
+    const margin = 24
+    const left = item.x * scale + offset.current.x
+    const top = item.y * scale + offset.current.y
+    const fullyVisible =
+      left >= margin &&
+      top >= margin &&
+      left + item.w * scale <= stage.clientWidth - margin &&
+      top + item.h * scale <= stage.clientHeight - margin
+    if (fullyVisible) return
+
+    const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value))
+    offset.current.x = clamp(
+      stage.clientWidth / 2 - (item.x + item.w / 2) * scale,
+      Math.min(stage.clientWidth - plane.offsetWidth, 0),
+      0,
+    )
+    offset.current.y = clamp(
+      stage.clientHeight / 2 - (item.y + item.h / 2) * scale,
+      Math.min(stage.clientHeight - plane.offsetHeight, 0),
+      0,
+    )
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    plane.style.transition = reduceMotion ? 'none' : 'transform 450ms cubic-bezier(0.22, 1, 0.36, 1)'
+    plane.style.transform = `translate(${offset.current.x}px, ${offset.current.y}px)`
+    window.setTimeout(() => {
+      plane.style.transition = ''
+    }, 460)
+    setHintFaded(true)
+    updateDirectionHint()
+  }
+
   const openItem = (item: GalleryItem) => {
     if (dragMoved.current) return
     setSelected(item)
@@ -293,8 +341,9 @@ export default function Gallery() {
               }}
               type="button"
               onClick={() => openItem(item)}
+              onFocus={() => panToItem(i)}
               data-cat={item.cat}
-              className="group absolute cursor-pointer overflow-hidden rounded-lg text-left"
+              className="group absolute cursor-pointer overflow-hidden rounded-lg text-left outline-offset-4 focus-visible:outline-2 focus-visible:outline-rose"
               style={{ left: item.x, top: item.y, width: item.w, height: item.h }}
             >
               <img
@@ -304,7 +353,7 @@ export default function Gallery() {
                 draggable={false}
                 className="block h-full w-full object-cover transition-transform duration-400 group-hover:scale-[1.03]"
               />
-              <div className="absolute bottom-2.5 left-2.5 rounded-full bg-[color-mix(in_srgb,var(--color-walnut)_80%,transparent)] px-3 py-1.5 text-[0.66rem] tracking-[0.08em] text-parch uppercase opacity-0 transition-opacity duration-200 pointer-events-none group-hover:opacity-100">
+              <div className="pointer-events-none absolute bottom-2 left-2 max-w-[calc(100%-1rem)] rounded-2xl bg-[color-mix(in_srgb,var(--color-walnut)_80%,transparent)] px-3 py-1.5 text-[0.7rem] leading-tight tracking-[0.06em] text-parch uppercase opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 [@media(hover:none)]:opacity-100">
                 {item.title}
               </div>
             </button>
@@ -340,7 +389,7 @@ export default function Gallery() {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label={renderedItem?.title}
+        aria-labelledby="gallery-item-title"
         className={`fixed inset-0 z-[500] flex items-center justify-center p-6 transition-colors duration-200 ${
           selected ? 'bg-[rgba(30,18,10,0.88)]' : 'pointer-events-none bg-[rgba(30,18,10,0)]'
         } ${renderedItem ? '' : 'hidden'}`}
@@ -367,31 +416,33 @@ export default function Gallery() {
               <div className="flex max-h-[55vh] w-full items-center justify-center rounded-t-2xl bg-off">
                 <img
                   src={renderedItem.img}
-                  alt={renderedItem.title}
-                  className="max-h-[55vh] w-auto max-w-full object-contain"
+                  alt={`${renderedItem.title} — ${renderedItem.tag}`}
+                  width={renderedItem.iw}
+                  height={renderedItem.ih}
+                  className="h-auto max-h-[55vh] w-auto max-w-full object-contain"
                 />
               </div>
               <div className="px-8 py-7">
                 <div className="mb-1.5 text-[0.7rem] font-semibold tracking-[0.15em] text-rose uppercase">
                   {renderedItem.tag}
                 </div>
-                <div className="mb-2.5 font-display text-[1.4rem] text-walnut">
+                <h2 id="gallery-item-title" className="mb-2.5 font-display text-[1.4rem] text-walnut">
                   {renderedItem.title}
-                </div>
-                <div className="mb-5 text-[0.88rem] leading-[1.75] font-light text-muted">
+                </h2>
+                <div className="mb-5 text-[0.95rem] leading-[1.75] text-muted">
                   {renderedItem.desc}
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <Link
                     to={`/contact?piece=${encodeURIComponent(renderedItem.title)}&tag=${encodeURIComponent(renderedItem.tag)}&cat=${encodeURIComponent(renderedItem.cat)}&img=${encodeURIComponent(renderedItem.img)}`}
-                    className="inline-block rounded-full bg-rose px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
+                    className="inline-block rounded-full bg-rose px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
                   >
                     Request this piece
                   </Link>
                   <button
                     type="button"
                     onClick={() => setSelected(null)}
-                    className="inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.82rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
+                    className="inline-block rounded-full border-[1.5px] border-linen px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-walnut uppercase transition-colors hover:border-rose hover:text-rose"
                   >
                     Back to gallery
                   </button>
