@@ -1,13 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
 import './index.css'
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-)
+const start = () => import('./boot')
+
+// A pre-rendered page is already complete HTML, so let the browser paint it before
+// React loads and hydrates; otherwise the first paint waits for all of React to run.
+if (document.getElementById('root')!.hasChildNodes()) {
+  requestAnimationFrame(() => setTimeout(start))
+} else {
+  start()
+}
