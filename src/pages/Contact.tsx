@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Footer from '../components/Footer'
+import { track } from '../lib/analytics'
 import { EMAIL, WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from '../lib/contact'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
@@ -54,6 +55,11 @@ export default function Contact() {
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`
     window.open(url, '_blank', 'noopener')
     setSubmitted(true)
+    track('generate_lead', {
+      method: 'whatsapp_form',
+      piece: piece ?? 'custom request',
+      category: isPrefilled ? tag : category || 'not chosen',
+    })
   }
 
   return (

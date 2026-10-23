@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { track } from '../lib/analytics'
 import { responsive } from '../lib/img'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
@@ -438,6 +439,9 @@ export default function Gallery() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     to={`/contact?piece=${encodeURIComponent(renderedItem.title)}&tag=${encodeURIComponent(renderedItem.tag)}&cat=${encodeURIComponent(renderedItem.cat)}&img=${encodeURIComponent(renderedItem.img)}`}
+                    onClick={() =>
+                      track('request_piece_click', { piece: renderedItem.title, category: renderedItem.tag })
+                    }
                     className="inline-block rounded-full bg-rose px-7 py-3 text-[0.9rem] font-semibold tracking-[0.08em] text-parch uppercase transition-colors hover:bg-rose-deep"
                   >
                     Request this piece

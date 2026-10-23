@@ -1,3 +1,4 @@
+import { track } from '../lib/analytics'
 import { EMAIL, INSTAGRAM_URL, WHATSAPP_NUMBER } from '../lib/contact'
 
 interface FooterProps {
@@ -57,6 +58,7 @@ export default function Footer({ showEmail = false }: FooterProps) {
             <li>
               <a
                 href={INSTAGRAM_URL}
+                onClick={() => track('contact_click', { method: 'instagram' })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[0.82rem] font-light text-parch/65 hover:text-parch"
@@ -67,6 +69,7 @@ export default function Footer({ showEmail = false }: FooterProps) {
             <li>
               <a
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                onClick={() => track('contact_click', { method: 'whatsapp' })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[0.82rem] font-light text-parch/65 hover:text-parch"
@@ -78,6 +81,7 @@ export default function Footer({ showEmail = false }: FooterProps) {
               <li>
                 <a
                   href={`mailto:${EMAIL}`}
+                  onClick={() => track('contact_click', { method: 'email' })}
                   className="text-[0.82rem] font-light text-parch/65 hover:text-parch"
                 >
                   {EMAIL}
