@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Reveal from '../components/Reveal'
+import { responsive } from '../lib/img'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 const VALUES = [
@@ -27,7 +28,8 @@ export default function About() {
       <section className="grid grid-cols-2 items-start max-md:grid-cols-1">
         <div className="relative aspect-[4/5] overflow-hidden bg-rose-lt md:sticky md:top-14 md:aspect-auto md:h-[calc(100svh-3.5rem)] md:max-h-[880px] md:min-h-[560px]">
           <img
-            src="/images/products/heritage-maxi-dress.jpg"
+            {...responsive('/images/products/heritage-maxi-dress.jpg')}
+            sizes="(max-width: 767px) 100vw, 50vw"
             alt="Maro wearing one of her handmade granny-square cardigans"
             loading="eager"
             fetchPriority="high"

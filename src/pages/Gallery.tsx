@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { responsive } from '../lib/img'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 interface GalleryItem {
@@ -347,7 +348,8 @@ export default function Gallery() {
               style={{ left: item.x, top: item.y, width: item.w, height: item.h }}
             >
               <img
-                src={item.img}
+                {...responsive(item.img)}
+                sizes={`${item.w}px`}
                 alt={`${item.title} — ${item.tag}`}
                 loading="lazy"
                 draggable={false}
@@ -415,7 +417,8 @@ export default function Gallery() {
               </button>
               <div className="flex max-h-[55vh] w-full items-center justify-center rounded-t-2xl bg-off">
                 <img
-                  src={renderedItem.img}
+                  {...responsive(renderedItem.img)}
+                  sizes="(max-width: 527px) 100vw, 480px"
                   alt={`${renderedItem.title} — ${renderedItem.tag}`}
                   width={renderedItem.iw}
                   height={renderedItem.ih}

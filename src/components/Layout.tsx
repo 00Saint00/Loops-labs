@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './Nav'
 import MobileMenu from './MobileMenu'
@@ -16,7 +16,9 @@ export default function Layout() {
     >
       <Nav variant={isGallery ? 'minimal' : 'full'} onMenuClick={() => setMenuOpen(true)} />
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </div>
   )
 }

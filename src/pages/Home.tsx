@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Reveal from '../components/Reveal'
+import { responsive } from '../lib/img'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 const FEATURED = [
@@ -97,7 +98,10 @@ export default function Home() {
           style={{ backgroundColor: '#53301a' }}
         >
           <img
-            src="/images/products/ocean-breeze-cardigan.jpg"
+            {...responsive('/images/products/ocean-breeze-cardigan.jpg')}
+            sizes="(max-width: 767px) 100vw, 50vw"
+            width={960}
+            height={1280}
             alt="A handmade Maro's Loop Lab granny-square cardigan"
             loading="eager"
             fetchPriority="high"
@@ -147,7 +151,8 @@ export default function Home() {
                 className="group relative block overflow-hidden rounded-lg"
               >
                 <img
-                  src={item.img}
+                  {...responsive(item.img)}
+                  sizes={item.tall ? '(max-width: 767px) 50vw, 550px' : '(max-width: 767px) 50vw, 275px'}
                   alt={`${item.title} — ${item.tag}`}
                   loading="lazy"
                   className={`block w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] ${item.tall ? 'h-[520px]' : 'h-[250px]'}`}

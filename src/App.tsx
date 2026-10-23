@@ -1,10 +1,13 @@
+import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-import About from './pages/About'
-import Gallery from './pages/Gallery'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
+
+// Home is the main landing page, so it ships in the main bundle; the rest load on demand.
+const About = lazy(() => import('./pages/About'))
+const Gallery = lazy(() => import('./pages/Gallery'))
+const Contact = lazy(() => import('./pages/Contact'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
   return (

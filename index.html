@@ -11,6 +11,37 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href="https://loops-labs.vercel.app/" />
+    <link rel="preload" href="/fonts/jost/jost-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/custom/godber.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // The home hero photo is the largest thing on the landing page; start fetching it
+      // before React renders. Other routes skip this so they don't download it for nothing.
+      if (location.pathname === '/') {
+        var hero = document.createElement('link')
+        hero.rel = 'preload'
+        hero.as = 'image'
+        hero.fetchPriority = 'high'
+        hero.imageSrcset =
+          '/images/products/ocean-breeze-cardigan-480.webp 480w, /images/products/ocean-breeze-cardigan-960.webp 960w'
+        hero.imageSizes = '(max-width: 767px) 100vw, 50vw'
+        document.head.appendChild(hero)
+      }
+    </script>
+    <!-- Google Analytics, loaded once the page has finished loading so it doesn't slow it down -->
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-XSRXZ2GFB5')
+      addEventListener('load', function () {
+        var s = document.createElement('script')
+        s.async = true
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XSRXZ2GFB5'
+        document.head.appendChild(s)
+      })
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://loops-labs.vercel.app/" />
     <meta property="og:site_name" content="Maro's Loop Lab" />
